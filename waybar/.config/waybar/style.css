@@ -1,0 +1,101 @@
+/* Gruvbox Dark — Waybar */
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+}
+
+window#waybar {
+  background-color: #282828;
+  color: #ebdbb2;
+  border-bottom: 2px solid #3c3836;
+}
+
+/* Left */
+#workspaces {
+  margin: 0 4px;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  background: transparent;
+  color: #a89984;
+  border-bottom: 2px solid transparent;
+}
+
+#workspaces button:hover {
+  background: #3c3836;
+  color: #ebdbb2;
+}
+
+#workspaces button.active {
+  color: #fabd2f;
+  border-bottom: 2px solid #fabd2f;
+}
+
+#workspaces button.urgent {
+  color: #fb4934;
+  border-bottom: 2px solid #fb4934;
+}
+
+/* Center */
+#window {
+  color: #d5c4a1;
+  font-style: italic;
+}
+
+/* Right modules — shared */
+#pulseaudio,
+#network,
+#battery,
+#clock,
+#tray {
+  padding: 0 10px;
+  color: #ebdbb2;
+}
+
+/* Separators between right modules */
+#pulseaudio {
+  border-left: 1px solid #504945;
+}
+
+#network {
+  border-left: 1px solid #504945;
+}
+
+#battery {
+  border-left: 1px solid #504945;
+}
+
+#clock {
+  border-left: 1px solid #504945;
+  color: #fabd2f;
+}
+
+#tray {
+  border-left: 1px solid #504945;
+}
+
+/* State colors */
+#pulseaudio.muted {
+  color: #928374;
+}
+
+#battery.warning {
+  color: #fe8019;
+}
+
+#battery.critical {
+  color: #fb4934;
+}
+
+#battery.charging {
+  color: #b8bb26;
+}
+
+#network.disconnected {
+  color: #928374;
+}
