@@ -50,6 +50,9 @@ window#waybar {
 }
 
 /* Right modules — shared */
+#mpris,
+#cpu,
+#memory,
 #pulseaudio,
 #network,
 #clock,
@@ -59,6 +62,20 @@ window#waybar {
 }
 
 /* Separators between right modules */
+#mpris {
+  border-left: 1px solid #504945;
+  color: #d3869b;
+  font-style: italic;
+}
+
+#cpu {
+  border-left: 1px solid #504945;
+}
+
+#memory {
+  border-left: 1px solid #504945;
+}
+
 #pulseaudio {
   border-left: 1px solid #504945;
 }
@@ -74,6 +91,14 @@ window#waybar {
 
 #tray {
   border-left: 1px solid #504945;
+}
+
+#cpu.high {
+  color: #fb4934;
+}
+
+#memory.high {
+  color: #fb4934;
 }
 
 /* State colors */

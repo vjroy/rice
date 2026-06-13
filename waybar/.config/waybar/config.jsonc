@@ -14,6 +14,9 @@
   ],
 
   "modules-right": [
+    "mpris",
+    "cpu",
+    "memory",
     "pulseaudio",
     "network",
     "clock",
@@ -55,5 +58,33 @@
 
   "tray": {
     "spacing": 8
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 2,
+    "on-click": "kitty --title btop btop"
+  },
+
+  "memory": {
+    "format": " {percentage}%",
+    "interval": 5,
+    "tooltip-format": "{used:0.1f}G / {total:0.1f}G"
+  },
+
+  "mpris": {
+    "format": "{player_icon} {title}",
+    "format-paused": "{player_icon} <i>{title}</i>",
+    "player-icons": {
+      "default": "▶",
+      "spotify": "",
+      "firefox": "󰈹",
+      "mpv": "🎥"
+    },
+    "status-icons": {
+      "paused": "⏸"
+    },
+    "max-length": 40,
+    "ignored-players": ["firefox"]
   }
 }

@@ -46,6 +46,8 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("awww img /home/veejh/.local/share/wallpapers/Ant-Dark-wallpapers/Ant-Dark.jpg --transition-type fade --transition-duration 1")
   hl.exec_cmd("dunst")
   hl.exec_cmd("nm-applet")
+  hl.exec_cmd("hypridle")
+  hl.exec_cmd("wl-paste --watch cliphist store")
 end)
 
 
@@ -272,6 +274,9 @@ hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("rofi -show window"))
 
 -- Lock screen
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+
+-- Clipboard history
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -p 'clipboard' | cliphist decode | wl-copy"))
 
 -- Screenshots (grimblast)
 hl.bind("PRINT", hl.dsp.exec_cmd("grimblast --notify copy screen"), { locked = true })
