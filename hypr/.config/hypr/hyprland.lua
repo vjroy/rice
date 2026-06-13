@@ -45,6 +45,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("awww-daemon")
   hl.exec_cmd("awww img /home/veejh/.local/share/wallpapers/Ant-Dark-wallpapers/Ant-Dark.jpg --transition-type fade --transition-duration 1")
   hl.exec_cmd("dunst")
+  hl.exec_cmd("nm-applet")
 end)
 
 
@@ -265,6 +266,17 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+
+-- Window switcher
+hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("rofi -show window"))
+
+-- Lock screen
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+
+-- Screenshots (grimblast)
+hl.bind("PRINT", hl.dsp.exec_cmd("grimblast --notify copy screen"), { locked = true })
+hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("grimblast --notify copy area"), { locked = true })
+hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("grimblast --notify copy active"), { locked = true })
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
