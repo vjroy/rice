@@ -1,0 +1,91 @@
+# Gruvbox Dark — Starship prompt
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[░▒▓](fg:#3c3836)\
+[ $os$username ](bg:#3c3836 fg:#ebdbb2)\
+[▓▒░](fg:#3c3836 bg:#504945)\
+[ $directory ](bg:#504945 fg:#ebdbb2)\
+[▓▒░](fg:#504945 bg:#665c54)\
+$git_branch\
+$git_status\
+[▓▒░](fg:#665c54 bg:none)\
+$fill\
+$nodejs$rust$golang$python\
+[ $cmd_duration ](fg:#928374)\
+[▓▒░](fg:#3c3836 bg:none)\
+[ $time ](bg:#3c3836 fg:#fabd2f)\
+[▓▒░](fg:#3c3836)\
+\n$character"""
+
+[os]
+disabled = false
+style = "bg:#3c3836 fg:#ebdbb2"
+
+[os.symbols]
+Arch = " "
+
+[username]
+show_always = true
+style_user = "bg:#3c3836 fg:#ebdbb2"
+style_root = "bg:#3c3836 fg:#fb4934"
+format = "[$user]($style)"
+
+[directory]
+style = "bg:#504945 fg:#fabd2f"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+
+[git_branch]
+symbol = " "
+style = "bg:#665c54 fg:#b8bb26"
+format = "[ $symbol$branch ]($style)"
+
+[git_status]
+style = "bg:#665c54 fg:#fb4934"
+format = "[$all_status$ahead_behind ]($style)"
+
+[nodejs]
+symbol = " "
+style = "fg:#b8bb26"
+format = "[ $symbol$version ]($style)"
+
+[rust]
+symbol = " "
+style = "fg:#fe8019"
+format = "[ $symbol$version ]($style)"
+
+[golang]
+symbol = " "
+style = "fg:#83a598"
+format = "[ $symbol$version ]($style)"
+
+[python]
+symbol = " "
+style = "fg:#fabd2f"
+format = "[ $symbol$version ]($style)"
+
+[cmd_duration]
+min_time = 2_000
+format = "[ 󱦟 $duration ]($style)"
+
+[time]
+disabled = false
+time_format = "%H:%M"
+style = "bg:#3c3836 fg:#fabd2f"
+format = "[$time]($style)"
+
+[fill]
+symbol = " "
+
+[character]
+success_symbol = "[❯](bold fg:#b8bb26)"
+error_symbol = "[❯](bold fg:#fb4934)"

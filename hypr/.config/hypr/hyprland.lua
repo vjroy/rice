@@ -42,7 +42,8 @@ local menu        = "rofi -show drun"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 hl.on("hyprland.start", function ()
   hl.exec_cmd("waybar")
-  hl.exec_cmd("hyprpaper")
+  hl.exec_cmd("awww-daemon")
+  hl.exec_cmd("awww img /home/veejh/.local/share/wallpapers/Ant-Dark-wallpapers/Ant-Dark.jpg --transition-type fade --transition-duration 1")
   hl.exec_cmd("dunst")
 end)
 
