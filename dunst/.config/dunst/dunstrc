@@ -3,9 +3,9 @@
   follow = mouse
 
   width = 320
-  height = 200
+  height = (0, 200)
   origin = top-right
-  offset = 10x10
+  offset = (10, 10)
   scale = 0
 
   notification_limit = 5
@@ -42,7 +42,7 @@
   show_indicators = yes
 
   enable_recursive_icon_lookup = true
-  icon_theme = Ant-Dark
+  icon_theme = Ant-Dark, hicolor
   icon_position = left
   min_icon_size = 32
   max_icon_size = 32

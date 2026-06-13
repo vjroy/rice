@@ -16,7 +16,6 @@
   "modules-right": [
     "pulseaudio",
     "network",
-    "battery",
     "clock",
     "tray"
   ],
@@ -44,17 +43,9 @@
     "format-wifi": " {essid}",
     "format-ethernet": " {ifname}",
     "format-disconnected": "󰤭 disconnected",
-    "tooltip-format": "{ipAddr} via {gwaddr}"
-  },
-
-  "battery": {
-    "format": "{icon} {capacity}%",
-    "format-icons": ["", "", "", "", ""],
-    "format-charging": " {capacity}%",
-    "states": {
-      "warning": 30,
-      "critical": 15
-    }
+    "format-linked": " {ifname} (no IP)",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) via {gwaddr}",
+    "tooltip-format-ethernet": "{ifname} via {gwaddr}"
   },
 
   "clock": {
