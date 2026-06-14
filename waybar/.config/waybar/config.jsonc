@@ -1,8 +1,11 @@
 {
   "layer": "top",
-  "position": "bottom",
-  "height": 34,
-  "spacing": 4,
+  "position": "top",
+  "height": 36,
+  "margin-top": 8,
+  "margin-left": 12,
+  "margin-right": 12,
+  "spacing": 0,
   "exclusive": true,
 
   "modules-left": [
@@ -20,54 +23,86 @@
     "pulseaudio",
     "network",
     "clock",
+    "custom/swaync",
     "tray"
   ],
 
   "hyprland/workspaces": {
-    "format": "{id}",
+    "format": "{icon}",
     "on-click": "activate",
-    "sort-by-number": true
+    "sort-by-number": true,
+    "format-icons": {
+      "1":  "󰎤",
+      "2":  "󰎧",
+      "3":  "󰎪",
+      "4":  "󰎭",
+      "5":  "󰎱",
+      "6":  "󰎳",
+      "7":  "󰎶",
+      "8":  "󰎹",
+      "9":  "󰎼",
+      "10": "󰎿",
+      "active":  "",
+      "urgent":  "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 5
+    }
   },
 
   "hyprland/window": {
-    "max-length": 60,
-    "separate-outputs": true
+    "max-length": 50,
+    "separate-outputs": true,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": " $1",
+      "(.*) - kitty": " $1",
+      "(.*) - nvim": " $1"
+    }
   },
 
   "pulseaudio": {
-    "format": " {volume}%",
-    "format-muted": " muted",
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 muted",
+    "format-icons": {
+      "headphone": "󰋋",
+      "headset": "󰋎",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+    "tooltip": false
   },
 
   "network": {
-    "format-wifi": " {essid}",
-    "format-ethernet": " {ifname}",
-    "format-disconnected": "󰤭 disconnected",
-    "format-linked": " {ifname} (no IP)",
+    "format-wifi": "󰤨 {essid}",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-disconnected": "󰤭 offline",
+    "format-linked": "󰈀 {ifname}",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) via {gwaddr}",
     "tooltip-format-ethernet": "{ifname} via {gwaddr}"
   },
 
   "clock": {
-    "format": " {:%a %b %d  %I:%M %p}",
+    "format": "󰥔 {:%a %b %d  %I:%M %p}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
 
   "tray": {
-    "spacing": 8
+    "spacing": 8,
+    "icon-size": 16
   },
 
   "cpu": {
-    "format": " {usage}%",
+    "format": "󰘚 {usage}%",
     "interval": 2,
-    "on-click": "kitty --title btop btop"
+    "on-click": "kitty --title btop btop",
+    "tooltip": false
   },
 
   "memory": {
-    "format": " {percentage}%",
+    "format": "󰍛 {percentage}%",
     "interval": 5,
     "tooltip-format": "{used:0.1f}G / {total:0.1f}G"
   },
@@ -78,13 +113,33 @@
     "player-icons": {
       "default": "▶",
       "spotify": "",
-      "firefox": "󰈹",
-      "mpv": "🎥"
+      "mpv": "󰎁"
     },
     "status-icons": {
-      "paused": "⏸"
+      "paused": "󰏤"
     },
-    "max-length": 40,
+    "max-length": 36,
     "ignored-players": ["firefox"]
+  },
+
+  "custom/swaync": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󰂚",
+      "none": "󰂜",
+      "dnd-notification": "󰂛",
+      "dnd-none": "󰪑",
+      "inhibited-notification": "󰂚",
+      "inhibited-none": "󰂜",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   }
 }

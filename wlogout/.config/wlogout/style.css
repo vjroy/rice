@@ -1,0 +1,39 @@
+/* Gruvbox Dark — wlogout */
+
+* {
+  background-image: none;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+}
+
+window {
+  background-color: rgba(40, 40, 40, 0.85);
+}
+
+button {
+  color: #ebdbb2;
+  background-color: rgba(60, 56, 54, 0.6);
+  border: 2px solid rgba(80, 73, 69, 0.5);
+  border-radius: 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40%;
+  margin: 8px;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+button:focus,
+button:active,
+button:hover {
+  background-color: rgba(80, 73, 69, 0.9);
+  border-color: #fabd2f;
+  color: #fabd2f;
+  outline-style: none;
+}
+
+#lock     { background-image: image(url("/usr/share/wlogout/icons/lock.png")); }
+#logout   { background-image: image(url("/usr/share/wlogout/icons/logout.png")); }
+#suspend  { background-image: image(url("/usr/share/wlogout/icons/suspend.png")); }
+#hibernate{ background-image: image(url("/usr/share/wlogout/icons/hibernate.png")); }
+#shutdown { background-image: image(url("/usr/share/wlogout/icons/shutdown.png")); }
+#reboot   { background-image: image(url("/usr/share/wlogout/icons/reboot.png")); }

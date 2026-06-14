@@ -1,0 +1,125 @@
+/* Gruvbox Dark — SwayNC */
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+}
+
+.control-center {
+  background: rgba(40, 40, 40, 0.95);
+  border: 1px solid #3c3836;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.notification-row {
+  outline: none;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+  opacity: 0.9;
+}
+
+.notification {
+  border-radius: 10px;
+  border: 1px solid #3c3836;
+  background: #282828;
+  padding: 8px;
+  margin: 4px 0;
+}
+
+.notification-content {
+  padding: 6px;
+}
+
+.notification-default-action {
+  border-radius: 10px;
+  background: transparent;
+}
+
+.notification-default-action:hover {
+  background: #3c3836;
+}
+
+.summary {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fabd2f;
+}
+
+.time {
+  font-size: 11px;
+  color: #928374;
+}
+
+.body {
+  font-size: 13px;
+  color: #ebdbb2;
+}
+
+.app-icon-image {
+  border-radius: 6px;
+}
+
+.urgency-low    { border-left: 3px solid #8ec07c; }
+.urgency-normal { border-left: 3px solid #fabd2f; }
+.urgency-critical {
+  border-left: 3px solid #fb4934;
+  color: #fb4934;
+}
+
+.widget-title {
+  color: #ebdbb2;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 8px 4px;
+}
+
+.widget-title > button {
+  font-size: 13px;
+  color: #928374;
+  background: transparent;
+  border: 1px solid #504945;
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+
+.widget-title > button:hover {
+  background: #3c3836;
+  color: #ebdbb2;
+}
+
+.widget-dnd {
+  padding: 4px 8px;
+  color: #ebdbb2;
+}
+
+.widget-dnd > switch {
+  border-radius: 12px;
+  border: 1px solid #504945;
+  background: #3c3836;
+}
+
+.widget-dnd > switch:checked {
+  background: rgba(250, 189, 47, 0.3);
+  border-color: #fabd2f;
+}
+
+.widget-dnd > switch slider {
+  border-radius: 50%;
+  background: #ebdbb2;
+}
+
+.close-button {
+  background: transparent;
+  color: #928374;
+  border: none;
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.close-button:hover {
+  background: rgba(251, 73, 52, 0.2);
+  color: #fb4934;
+}

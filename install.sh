@@ -3,7 +3,7 @@ set -e
 
 RICE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-components=(hypr waybar kitty rofi dunst gtk qt bash starship hyprlock hypridle pipewire)
+components=(hypr waybar kitty rofi dunst gtk qt bash starship hyprlock hypridle pipewire swaync wlogout fastfetch)
 
 for c in "${components[@]}"; do
   if [ -d "$RICE_DIR/$c" ]; then

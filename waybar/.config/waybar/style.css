@@ -1,4 +1,4 @@
-/* Gruvbox Dark — Waybar */
+/* Gruvbox Dark — Waybar (floating pill) */
 
 * {
   font-family: "JetBrainsMono Nerd Font", monospace;
@@ -9,21 +9,25 @@
 }
 
 window#waybar {
-  background-color: #282828;
+  background-color: rgba(40, 40, 40, 0.92);
   color: #ebdbb2;
-  border-bottom: 2px solid #3c3836;
+  border-radius: 12px;
+  border: 1px solid #3c3836;
 }
 
-/* Left */
+/* Left — workspaces */
 #workspaces {
   margin: 0 4px;
+  padding: 0 2px;
 }
 
 #workspaces button {
-  padding: 0 8px;
+  padding: 0 7px;
   background: transparent;
   color: #a89984;
-  border-bottom: 2px solid transparent;
+  border-radius: 8px;
+  min-width: 0;
+  transition: all 0.15s ease;
 }
 
 #workspaces button:hover {
@@ -34,19 +38,19 @@ window#waybar {
 #workspaces button.active,
 #workspaces button.focused {
   color: #fabd2f;
-  background: #3c3836;
-  box-shadow: inset 0 -2px #fabd2f;
+  background: rgba(250, 189, 47, 0.15);
 }
 
 #workspaces button.urgent {
   color: #fb4934;
-  box-shadow: inset 0 -2px #fb4934;
+  background: rgba(251, 73, 52, 0.15);
 }
 
-/* Center */
+/* Center — window title */
 #window {
   color: #d5c4a1;
   font-style: italic;
+  padding: 0 12px;
 }
 
 /* Right modules — shared */
@@ -56,56 +60,46 @@ window#waybar {
 #pulseaudio,
 #network,
 #clock,
+#custom-swaync,
 #tray {
   padding: 0 10px;
   color: #ebdbb2;
 }
 
-/* Separators between right modules */
 #mpris {
-  border-left: 1px solid #504945;
   color: #d3869b;
   font-style: italic;
-}
-
-#cpu {
   border-left: 1px solid #504945;
 }
 
-#memory {
-  border-left: 1px solid #504945;
-}
-
-#pulseaudio {
-  border-left: 1px solid #504945;
-}
-
-#network {
-  border-left: 1px solid #504945;
-}
+#cpu         { border-left: 1px solid #504945; }
+#memory      { border-left: 1px solid #504945; }
+#pulseaudio  { border-left: 1px solid #504945; }
+#network     { border-left: 1px solid #504945; }
 
 #clock {
   border-left: 1px solid #504945;
+  color: #fabd2f;
+  font-weight: bold;
+}
+
+#custom-swaync {
+  border-left: 1px solid #504945;
+  color: #8ec07c;
+  padding: 0 10px;
+}
+
+#custom-swaync.notification {
   color: #fabd2f;
 }
 
 #tray {
   border-left: 1px solid #504945;
-}
-
-#cpu.high {
-  color: #fb4934;
-}
-
-#memory.high {
-  color: #fb4934;
+  padding-right: 8px;
 }
 
 /* State colors */
-#pulseaudio.muted {
-  color: #928374;
-}
-
-#network.disconnected {
-  color: #928374;
-}
+#cpu.high          { color: #fb4934; }
+#memory.high       { color: #fb4934; }
+#pulseaudio.muted  { color: #928374; }
+#network.disconnected { color: #928374; }
