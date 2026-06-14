@@ -155,7 +155,7 @@ hl.window_rule({
 
 -- Startup layout: nvim left, Chrome right on workspace 1
 hl.window_rule({ name = "startup-nvim",   match = { class = "kitty", title = "nvim" },  workspace = "1" })
-hl.window_rule({ name = "startup-chrome", match = { initialClass = "google-chrome" },    workspace = "1" })
+hl.window_rule({ name = "startup-chrome", match = { class = "google-chrome" },           workspace = "1" })
 
 -- Float common utility windows
 hl.window_rule({ name = "float-pavucontrol",  match = { class = "pavucontrol" },         float = true, size = "800 500", center = true })
